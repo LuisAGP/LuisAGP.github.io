@@ -39,6 +39,24 @@ const includeHtml = () => {
 
 
 
+const activeButton = (button) => {
+
+    try {
+        
+        let aciveElement = document.getElementById('menu-options').getElementsByClassName('active')[0];
+        aciveElement.className = "";
+
+        button.className = "active";
+
+
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+
+
 const dd = (message) => {
     console.log(message);
 }
