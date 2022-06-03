@@ -1,8 +1,43 @@
 const urlBase = window.location.origin;
 
 window.onload = () => {
-
+    
+    includeBase();
     includeHtml();
+
+}
+
+
+const includeBase = () => {
+
+    try {
+
+        let bases = document.getElementsByTagName('base')
+
+        for(let b of bases){
+
+            let url = b.getAttribute("file");
+            
+            fetch(urlBase+url)
+            .then(response => response.text())
+            .then(html => {
+
+                let childs = b.childNodes;
+                let parser = new DOMParser();
+                codigo = parser.parseFromString(html, 'text/html');
+
+                document.documentElement.replaceChildren(...codigo.documentElement.childNodes);
+
+                includeHtml();
+
+            })
+            .catch(error => console.log(error));
+
+        }
+
+    } catch (error) {
+        console.error(error);
+    }
 
 }
 
