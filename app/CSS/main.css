@@ -11,6 +11,11 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+a{
+    color: unset;
+    text-decoration: none;
+}
+
 /* *********************************** GENERAL *********************************** */
 
 

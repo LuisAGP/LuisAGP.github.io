@@ -12,28 +12,27 @@ const includeBase = () => {
 
     try {
 
-        let bases = document.getElementsByTagName('base')
+        let base = document.getElementById('base')
 
-        for(let b of bases){
+        if(!base){ return false; }
 
-            let url = b.getAttribute("file");
+        let url = base.getAttribute("file");
             
-            fetch(urlBase+url)
-            .then(response => response.text())
-            .then(html => {
+        fetch(urlBase+url)
+        .then(response => response.text())
+        .then(html => {
 
-                let childs = b.childNodes;
-                let parser = new DOMParser();
-                codigo = parser.parseFromString(html, 'text/html');
+            const childs = base;
+            const parser = new DOMParser();
+            codigo = parser.parseFromString(html, 'text/html');
+            codigo.getElementById('content-templates').replaceWith(...childs.childNodes);
 
-                document.documentElement.replaceChildren(...codigo.documentElement.childNodes);
+            document.documentElement.replaceChildren(...codigo.documentElement.childNodes);
 
-                includeHtml();
+            includeHtml();
 
-            })
-            .catch(error => console.log(error));
-
-        }
+        })
+        .catch(error => console.log(error));
 
     } catch (error) {
         console.error(error);
