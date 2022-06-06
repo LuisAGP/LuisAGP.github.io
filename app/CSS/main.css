@@ -139,6 +139,62 @@ a{
 
 
 
+/* ********************************** ENTRADAS *********************************** */
+
+.blog-entrie{
+    display: flex;
+    border: 1px solid var(--secondary-color);
+    margin-bottom: .5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.blog-entrie img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.blog-entrie .blog-info{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-info h6{
+    margin: .5rem;
+}
+
+.blog-info .icon{
+    margin-right: .5rem;
+}
+
+.blog-info h2{
+    font-weight: bolder;
+    margin: .2rem;
+}
+
+.blog-info p{
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.blog-info-footer{
+    height: 1.8rem;
+    border-top: 1px solid rgba(73, 73, 73, 0.548);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-info-footer span{
+    font-size: .7rem;
+}
+
+/* ********************************** ENTRADAS *********************************** */
+
+
+
 
 /* *********************************** FOOTER ************************************ */
 
@@ -147,7 +203,7 @@ footer{
     min-height: 5rem;
     text-align: center;
     background-color: var(--primary-color);
-    color: #353535;
+    color: var(--secondary-color);
 }
 
 .social-media{

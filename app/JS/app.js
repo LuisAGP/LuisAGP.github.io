@@ -4,6 +4,7 @@ window.onload = () => {
     
     includeBase();
     includeHtml();
+    loadEntries();
 
 }
 
@@ -115,6 +116,108 @@ const activeButton = () => {
     }
 
 }
+
+
+
+
+
+/**
+ * Función para cargar las entradas del blog
+ * @author Luis GP
+ * @return {Message}
+ */
+const loadEntries = () => {
+
+    try {
+        
+        ajax({
+            url: "/app/JSON/entradas.json",
+            success: function(data){
+                let contenedor = document.getElementById('blog-entries');
+                
+                if(!contenedor){
+                    contenedor = document.getElementById('lasest-entries');
+                }
+
+                if(!contenedor){
+                    return false;
+                }
+
+
+                for(let i of data.entradas){
+
+                    let fechaPost = new Date(i.fechaPublicacion);
+                    let day       = ("0" + fechaPost.getDate()).slice(-2);
+                    let month     = ("0" + (fechaPost.getMonth() + 1)).slice(-2);
+                    let year      = fechaPost.getFullYear();
+                    
+                    let div       = document.createElement('div');
+                    div.className = "blog-entrie";
+                    div.innerHTML = `
+                    <img src="${urlBase}${i.portada}"/>
+                    <div class="blog-info">
+                        <div>
+                            <h6><span class="fa fa-pencil icon" aria-hidden="true"></span><label>${i.autor}</label></h6>
+                            <h2>${i.titulo}</h2>
+                            <p>${i.descripcion}</p>
+                        </div>
+                        <div class="blog-info-footer">
+                            <span class="fa fa-calendar icon" aria-hidden="true"></span>
+                            <label>Publicado: ${day}/${month}/${year}</label>
+                        </div>
+                    </div>
+                    `;
+
+                    contenedor.append(div);
+
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+
+
+
+
+/**
+ * Función para realizar consultas ajax
+ * @author Luis GP
+ * @param {JSON} json
+ * @return {Message}
+ */
+const ajax = (json) => {
+
+    try {
+        
+        fetch(urlBase+json.url)
+        .then(response => response.json())
+        .then(data => json.success(data))
+        .catch(error => json.error ? json.error(error) : dd(error));
+
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+
+
+
+/**
+ * Función para obtener la fecha y hora actual
+ * @author Luis GP
+ * @return {Boolean}
+ */
+ const getCurrentDate = () => {
+    let fecha = new Date()
+    dd(fecha.toISOString());
+}
+
 
 
 
