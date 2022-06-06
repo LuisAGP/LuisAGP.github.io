@@ -8,6 +8,13 @@ window.onload = () => {
 }
 
 
+
+
+/**
+ * Función para cargar un template base
+ * @author Luis GP
+ * @return {Boolean}
+ */
 const includeBase = () => {
 
     try {
@@ -41,6 +48,14 @@ const includeBase = () => {
 }
 
 
+
+
+
+/**
+ * Funcion para cargar un template dentro de otro
+ * @author Luis GP
+ * @return {Boolean}
+ */
 const includeHtml = () => {
 
     try {
@@ -59,6 +74,7 @@ const includeHtml = () => {
                 codigo = parser.parseFromString(html, 'text/html').body;
 
                 i.replaceWith(...codigo.childNodes);
+                activeButton();
 
             })
             .catch(error => console.log(error));
@@ -73,15 +89,26 @@ const includeHtml = () => {
 
 
 
-const activeButton = (button) => {
+
+/**
+ * Activar el boton actual del menu
+ * @author Luis GP
+ * @return {Boolean}
+ */
+const activeButton = () => {
 
     try {
-        
-        let aciveElement = document.getElementById('menu-options').getElementsByClassName('active')[0];
-        aciveElement.className = "";
 
-        button.className = "active";
+        let url = window.location.href
+        let options = document.getElementById('menu-options').getElementsByTagName('a');
 
+        for(let i of options){
+            if(i.href == url){
+                i.parentNode.className = "active";
+            }else{
+                i.parentNode.className = "";
+            }
+        }
 
     } catch (error) {
         console.error(error);
