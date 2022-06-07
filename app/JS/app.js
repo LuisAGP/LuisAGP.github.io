@@ -135,8 +135,13 @@ const loadEntries = () => {
             success: function(data){
                 let contenedor = document.getElementById('blog-entries');
                 
+                data.entradas.sort(function(a,b){
+                    return new Date(b.fechaPublicacion) - new Date(a.fechaPublicacion);
+                });
+                
                 if(!contenedor){
                     contenedor = document.getElementById('lasest-entries');
+                    data.entradas = data.entradas.slice(0, 5);
                 }
 
                 if(!contenedor){
@@ -152,6 +157,7 @@ const loadEntries = () => {
                     let year      = fechaPost.getFullYear();
                     
                     let div       = document.createElement('div');
+                    div.onclick = function(){ window.location.href = i.rutaArchivo; }
                     div.className = "blog-entrie";
                     div.innerHTML = `
                     <img src="${urlBase}${i.portada}"/>

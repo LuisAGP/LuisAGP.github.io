@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        window.onload = () => {
+            
+            try{
+
+                const options  = [
+                    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+                    ['blockquote', 'code-block'],
+
+                    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+                    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+                    [{ 'direction': 'rtl' }],                         // text direction
+
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+                    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+                    [{ 'font': [] }],
+                    [{ 'align': [] }],
+
+                    ['clean']                                         // remove formatting button
+                ];
+
+
+                if(document.getElementById("editor")){
+
+                    quill = new Quill('#editor', {
+                        modules: {
+                            syntax: true,     // Include syntax module
+                            toolbar: options  // Include button in toolbar
+                        },
+                        theme: 'snow'
+                    });
+
+                }
+
+            }catch(e){
+                console.error(e);
+            }
+        }
+
+
+        const copyHTML = () => {
+            let codigo = document.getElementById("editor").getElementsByClassName("ql-editor")[0];
+            navigator.clipboard.writeText(codigo.innerHTML);
+        }
+    </script>
+
+    <style>
+        body{
+            max-width: 50rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pre-code{
+            padding: 1rem !important;
+            background-color: #484848 !important;
+            color: #9cdcfe !important;
+            overflow-x: auto;
+        }
+
+        .hljs-string{
+            color: #ce9178 !important;
+        }
+
+        .hljs-built_in, .function_{
+            color: #dcdcaa !important;
+        }
+
+        .hljs-number{
+            color: #b5cea8 !important;
+        }
+
+        .hljs-keyword, .hljs-name, .hljs-tag{
+            color: #569cd6 !important;
+        }
+
+        .hljs-comment{
+            color: #6a9955 !important;
+        }
+
+        .hljs-variable{
+            color: #9cdcfe !important;
+        }
+
+        .hljs-literal{
+            color: #c586c0 !important;
+        }
+
+        .hljs-attr{
+            color: #dcdcaa !important;
+        }
+
+        .class_{
+            color: #00e2b5 !important;
+        }
+
+        .ql-editor{
+            height: calc(100vh - 20vh);
+        }
+
+        .copy-html-button{
+            display: inline-block;
+            padding: .6rem .8rem;
+            background-color: rgb(66, 136, 240);
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin: 1rem 0 0 0;
+            text-transform: uppercase;
+            transition: all .6s ease;
+            font-size: .8rem;
+        }
+
+        .copy-html-button:hover{
+            transition: all .6s ease;
+            filter: brightness(1.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="editor" class="input-field"></div>
+    <button class="copy-html-button" onclick="copyHTML()">Copy HTML</button>
+</body>
+</html>

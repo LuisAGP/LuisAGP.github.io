@@ -1,0 +1,80 @@
+<meta charset="utf-8">
+<script src="/app/JS/app.js"></script>
+<div id="base" file="/app/templates/base.html" style="display: none;">
+    <div class="wrapper post-wrapper">
+
+        <div class="info-blog">
+            <div>
+                <span class="fa fa-user icon" aria-hidden="true"></span>
+                <label><b>Autor:</b> Luis GP</label>
+            </div>
+            <div>
+                <span class="fa fa-calendar icon" aria-hidden="true"></span>
+                <label><b>Publicado:</b> 06/06/2022</label>
+            </div>
+        </div>
+
+        <h1>Crea tu primera aplicación móvil utilizando Python</h1><p><br><br></p><p class="ql-align-justify"><a href="https://kivy.org/#home" target="_blank" style="color: rgb(47, 46, 46);"><strong>Kivy</strong></a><strong> </strong>es una librería de <strong>Python</strong> de código abierto que permite desarrollar aplicaciones con interfaces gráficas multi-plataforma (Android, iOS, Windows, Linux) de manera rápida y sencilla. Por otro lado podríamos decir que<span style="color: rgb(47, 46, 46);"> </span><a href="https://kivymd.readthedocs.io/en/latest/" target="_blank" style="color: rgb(47, 46, 46);"><strong>Kivymd</strong></a><strong> </strong> es una extensión de la librería Kivy a la cual se le han añadido widgets con un estilo<span style="color: rgb(47, 46, 46);"> </span><a href="https://material.io/design" target="_blank" style="color: rgb(47, 46, 46);"><strong>Material Design</strong></a>, de esa forma puedes crear aplicaciones visualmente modernas utilizando el lenguaje python.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Para comenzar a utilizar estas tecnologías es necesario tener instalada una versión de Python 3.6 o superior y tener en cuenta que estas instrucciones fueron pensadas para usuarios de Windows por lo que algunos de los procedimientos mencionados pueden no funcionar en Linux o Mac OS.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Si ya cuentas con una versión de Python que cumple con las especificaciones, pasamos a crear un entorno virtual:</p><p class="ql-align-justify"><br></p><p class="ql-align-justify"><br></p><h2 class="ql-align-justify"><strong>Configuración del entorno virtual de Python</strong></h2><h2 class="ql-align-justify"><br></h2><p class="ql-align-justify">Abre una terminal, dirígete hasta la carpeta donde quieras crear tu entorno virtual y escribe.</p><pre class="ql-syntax" spellcheck="false">py -m venv nombre_de_nuestro_entorno_virtual
+        </pre><p>Después de crearlo procedemos a activarlo. En la misma ruta y desde la terminal escribimos:</p><pre class="ql-syntax" spellcheck="false">nombre_de_nuestro_entorno_virtual\Scripts\activate
+        </pre><p>Debes tener en cuenta que para el comando anterior se utilizó \ (Slash invertido) en lugar de la / (Slash simple).</p><p><br></p><p>Si el procedimiento se realizó correctamente, visualizaras el siguiente resultado en consola:</p><pre class="ql-syntax" spellcheck="false">(nombre_de_nuestro_entorno_virtual) C:\...&gt;
+        </pre><p><br></p><p><br></p><h2><strong>Instalación de librerías Kivy y Kivymd </strong></h2><h2><br></h2><p class="ql-align-justify">En la misma consola y con nuestro entorno virtual activado, escribiremos las siguientes líneas:</p><pre class="ql-syntax" spellcheck="false">pip install kivy
+pip install pillow
+pip install kivymd==0.104.2
+        </pre><p><br></p><p><br></p><p><br></p><h2><strong>Aplicación de contador con kivy y kivymd</strong></h2><p><br></p><p class="ql-align-justify">Nuestra aplicación será muy sencilla, pero el objetivo es que veas lo fácil que es crear una app con estas herramientas. La aplicación consistirá en un contador, capaz de incrementar y decrementar su valor por medio de dos botones.</p><p class="ql-align-justify"><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_809dc7c0dd8b472ebe89f3464a2fd837~mv2.png/v1/fit/w_300,h_300,al_c,q_5,enc_auto/file.png" alt="Contador con python kivymd aplicación sencilla"></p><p><br></p><p>Puedes utilizar el editor que más te guste, en mi caso utilizare Visual Studio Code ya que incorpora una consola que nos permite ejecutar fácilmente los scripts en Python.</p><p><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_977450280cbd497caa2ceecfe0c06c8f~mv2.png/v1/fit/w_289,h_66,al_c,q_5,enc_auto/file.png" alt="Estructura de aplicación simple kivymd" height="66" width="289"></p><p><br></p><p class="ql-align-justify">Empezaremos creando una carpeta en el lugar que más te guste, puede llamarse SimpleApp y dentro crearás dos archivos, uno llamado main.py y otro simpleapp.kv.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">El archivo con extensión kv es un archivo que se encargará de leer la librería de Kivy y es donde nosotros indicaremos el contenido de nuestros componentes. Esta parte también se puede hacer solo con Python pero resulta más limpio trabajar de esta forma con un archivo aparte.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Si decides colocar otro nombre a la clase <strong>SimpleApp</strong> asegúrate de cambiar también el nombre del archivo kv ya que este archivo debe ir con el mismo nombre pero en minúsculas.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Código del archivo main.py</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-keyword">from</span> kivymd.app <span class="hljs-keyword">import</span> MDApp
+    <span class="hljs-keyword">from</span> kivymd.uix.relativelayout <span class="hljs-keyword">import</span> MDRelativeLayout
+
+    <span class="hljs-comment"># Clase que heredará los atributos de MDRelativeLayout</span>
+    <span class="hljs-comment"># MDRelativeLayout es un contenedor donde los elementos</span>
+    <span class="hljs-comment"># pueden ser posicionados en cualquier parte de él y pueden interponerse</span>
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Contador</span>(<span class="hljs-title class_ inherited__">MDRelativeLayout</span>):
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">incrementar</span>(<span class="hljs-params">self</span>): <span class="hljs-comment"># Método para incrementar el número en el Label</span>
+            <span class="hljs-comment"># self.ids accede a cualquier identificador de elemento dentro de esta clase</span>
+            valor_actual = <span class="hljs-built_in">int</span>(self.ids.conteo.text)
+            self.ids.conteo.text = <span class="hljs-built_in">str</span>(valor_actual + <span class="hljs-number">1</span>)
+
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">decrementar</span>(<span class="hljs-params">self</span>): <span class="hljs-comment"># Método para decrementar el número en el Label</span>
+            valor_actual = <span class="hljs-built_in">int</span>(self.ids.conteo.text)
+            self.ids.conteo.text = <span class="hljs-built_in">str</span>(valor_actual - <span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">SimpleApp</span>(<span class="hljs-title class_ inherited__">MDApp</span>):
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">build</span>(<span class="hljs-params">self</span>):
+            <span class="hljs-keyword">return</span> 
+
+    <span class="hljs-keyword">if</span> __name__==<span class="hljs-string">"__main__"</span>:
+        SimpleApp().run()
+    </pre><p><br></p><p><br></p><p>Código del archivo simpleapp.kv:</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-attr">Contador:</span>
+    <span class="hljs-attr">MDLabel:</span>
+        <span class="hljs-attr">text:</span> <span class="hljs-string">"0"</span> <span class="hljs-comment"># Valor que mostrará la etiqueta</span>
+        <span class="hljs-attr">color:</span> <span class="hljs-string">(.3,.8,.6,1)</span> <span class="hljs-comment"># Color del texto RGBA con valores del 0 al 1</span>
+        <span class="hljs-attr">pos_hint:</span> {<span class="hljs-attr">'center_x':</span> <span class="hljs-number">0.5</span>,<span class="hljs-attr">'center_y':</span> <span class="hljs-number">0.6</span>} <span class="hljs-comment"># Posición absoluta del elemento</span>
+        <span class="hljs-attr">halign:</span> <span class="hljs-string">"center"</span> <span class="hljs-comment"># Alineación horizontal del contenido de la etiqueta</span>
+        <span class="hljs-attr">font_size:</span> <span class="hljs-string">'50dp'</span> <span class="hljs-comment"># Tamaño de la fuente en densidad de pixeles (dp)</span>
+        <span class="hljs-attr">id:</span> <span class="hljs-string">conteo</span> <span class="hljs-comment"># nombre con el que se le identificará a la etiqueta</span>
+
+    <span class="hljs-attr">MDFillRoundFlatIconButton:</span>
+        <span class="hljs-attr">text:</span> <span class="hljs-string">'Incrementar'</span> <span class="hljs-comment"># Texto del botón</span>
+        <span class="hljs-attr">icon:</span> <span class="hljs-string">'plus'</span> <span class="hljs-comment"># Ícono</span>
+        <span class="hljs-attr">pos_hint:</span> {<span class="hljs-attr">'center_x':</span> <span class="hljs-number">0.4</span>, <span class="hljs-attr">'center_y':</span> <span class="hljs-number">0.4</span>}
+        <span class="hljs-attr">on_release:</span> <span class="hljs-string">root.incrementar()</span> <span class="hljs-comment"># Evento al soltar el botón</span>
+
+    <span class="hljs-attr">MDFillRoundFlatIconButton:</span>
+        <span class="hljs-attr">text:</span> <span class="hljs-string">'Decrementar'</span> <span class="hljs-comment"># Texto del botón</span>
+        <span class="hljs-attr">icon:</span> <span class="hljs-string">'minus'</span> <span class="hljs-comment"># Ícono</span>
+        <span class="hljs-attr">pos_hint:</span> {<span class="hljs-attr">'center_x':</span> <span class="hljs-number">0.6</span>, <span class="hljs-attr">'center_y':</span> <span class="hljs-number">0.4</span>}
+        <span class="hljs-attr">md_bg_color:</span> <span class="hljs-string">(.7,0,0,1)</span> <span class="hljs-comment"># color del botón</span>
+        <span class="hljs-attr">text_color:</span> <span class="hljs-string">(1,.1,.1,1)</span> <span class="hljs-comment"># Color del texto en el botón</span>
+        <span class="hljs-attr">icon_color:</span> <span class="hljs-string">(1,.1,.1,1)</span> <span class="hljs-comment"># Color del icono en el botón</span>
+        <span class="hljs-attr">on_press:</span> <span class="hljs-string">root.decrementar()</span> <span class="hljs-comment"># Evento al presionar el botón</span>
+
+
+<span class="hljs-comment"># ::: NOTA :::</span>
+<span class="hljs-comment"># la variable "root" hará referencia a la clase </span>
+<span class="hljs-comment"># padre del componente en este caso "Contador".</span>
+
+<span class="hljs-comment"># En algunos casos veras también la variable "app" </span>
+<span class="hljs-comment"># la cual hará referencia a la clase de la aplicación "SimpleApp".</span>
+        </pre><p><br></p><p>Para ejecutar nuestro código debemos escribir en la consola</p><pre class="ql-syntax" spellcheck="false">py main.py
+        </pre><p><br></p><p><br></p><p>¡Felicitaciones has creado tu primer aplicación con interfaces gráficas en Python!</p><p><br></p><p class="ql-align-justify">Espero que te haya resultado útil esta información, estaré publicando más contenido sobre este tema y compartiendo código de aplicaciones un poco más complejas, de modo que pueda mostrarte la forma en que puedes trabajar con proyectos más grandes, como crear un ejecutable para Windows de tu aplicación y como crear un apk para Android.</p><p><br></p>
+
+    </div>
+</div>
