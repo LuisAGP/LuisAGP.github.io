@@ -288,7 +288,8 @@ a{
 }
 
 .post-wrapper p{
-    font-size: .9rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .post-wrapper p,
@@ -318,8 +319,7 @@ a{
 
 @media only screen and (max-width : 480px) {
     .post-wrapper p{
-        font-size: 1.3rem;
-        line-height: 1.1;
+        font-size: 1.4rem;
     }
 
     .info-blog{
