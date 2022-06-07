@@ -50,6 +50,13 @@ a{
     text-align: center;
 }
 
+@media only screen and (max-width : 480px) {
+    .menu-options li{
+        padding: .3rem .5rem;
+        min-width: 2rem;
+    }
+}
+
 .menu-options .active{
     color: var(--primary-color);
     position: relative;
@@ -284,10 +291,6 @@ a{
     font-size: .9rem;
 }
 
-.post-wrapper h1{
-    text-align: center;
-}
-
 .post-wrapper p,
 .post-wrapper h1,
 .post-wrapper h2,
@@ -311,6 +314,18 @@ a{
     justify-content: space-between;
     margin: 0 0 2rem 0;
     font-size: .8rem;
+}
+
+@media only screen and (max-width : 480px) {
+    .post-wrapper p{
+        font-size: 1.3rem;
+        line-height: 1.1;
+    }
+
+    .info-blog{
+        font-size: 1rem;
+    }
+    
 }
 
 /* ********************************** ENTRADAS *********************************** */
