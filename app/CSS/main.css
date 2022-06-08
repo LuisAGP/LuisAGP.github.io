@@ -326,6 +326,11 @@ h2{
 }
 
 @media only screen and (max-width : 480px) {
+    .post-wrapper{
+        padding: 1rem;
+        border: none;
+    }
+
     .post-wrapper p{
         font-size: 1.4rem;
     }
