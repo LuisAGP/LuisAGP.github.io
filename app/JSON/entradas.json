@@ -8,6 +8,15 @@
             "etiquetas": "Diseño móvil,SimpleApp",
             "portada": "/app/image/e1/portada.jpg",
             "rutaArchivo": "/app/templates/entradas/entrada_1.html"
+        },
+        {
+            "titulo": "Diseños profesionales con Kivymd",
+            "autor": "Luis GP",
+            "descripcion": "Para el post del día de hoy, compartiré con ustedes un diseño para una aplicación de banco móvil, la aplicación es meramente para mostrar el diseño, no tiene ninguna funcionalidad...",
+            "fechaPublicacion": "2022-06-08T18:01:19.024Z",
+            "etiquetas": "Diseño móvil,Aplicación de banco,lenguaje kv",
+            "portada": "/app/image/e2/portada.jpg",
+            "rutaArchivo": "/app/templates/entradas/entrada_2.html"
         }
     ]
 }
