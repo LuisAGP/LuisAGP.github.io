@@ -2,59 +2,10 @@ const urlBase = window.location.origin;
 
 window.onload = () => {
     
-    includeBase();
     includeHtml();
     loadEntries();
 
 }
-
-
-
-
-/**
- * Función para cargar un template base
- * @author Luis GP
- * @return {Boolean}
- */
-const includeBase = () => {
-
-    try {
-
-        let base = document.getElementById('base')
-
-        if(!base){ return false; }
-
-        let url = base.getAttribute("file");
-            
-        fetch(urlBase+url)
-        .then(response => response.text())
-        .then(html => {
-
-            const childs = base;
-            const parser = new DOMParser();
-            codigo = parser.parseFromString(html, 'text/html');
-            codigo.getElementById('content-templates').replaceWith(...childs.childNodes);
-
-            document.documentElement.replaceChildren(...codigo.documentElement.childNodes);
-
-            includeHtml();
-
-            // Load Adsense script
-            let script = document.createElement("script");
-            script.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1397700931807199");
-            script.setAttribute("crossorigin", "anonymous");
-            script.setAttribute("async", true);
-            document.head.appendChild(script);
-
-        })
-        .catch(error => console.log(error));
-
-    } catch (error) {
-        console.error(error);
-    }
-
-}
-
 
 
 
