@@ -3,7 +3,7 @@
         {
             "titulo": "Crea tu primera aplicación móvil utilizando Python",
             "autor": "Luis GP",
-            "descripcion": "Para el post del día de hoy, compartiré con ustedes un diseño para una aplicación de banco móvil, la aplicación es meramente para mostrar...",
+            "descripcion": "Kivy es una librería de Python de código abierto que permite desarrollar aplicaciones con interfaces gráficas multi-plataforma (Android, iOS, Windows, Linux) de manera rápida y sencilla...",
             "fechaPublicacion": "2022-06-06T17:32:12.338Z",
             "etiquetas": "Diseño móvil,SimpleApp",
             "portada": "/app/image/e1/portada.jpg",
