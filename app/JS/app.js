@@ -44,7 +44,7 @@ const includeBase = () => {
             script.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1397700931807199");
             script.setAttribute("crossorigin", "anonymous");
             script.setAttribute("async", true);
-            document.body.appendChild(script);
+            document.head.appendChild(script);
 
         })
         .catch(error => console.log(error));
