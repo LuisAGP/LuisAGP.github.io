@@ -24,6 +24,10 @@ h2{
     font-size: 1.8rem;
 }
 
+img{
+    max-width: 100%;
+}
+
 /* *********************************** GENERAL *********************************** */
 
 
@@ -311,11 +315,11 @@ h2{
 }
 
 .ql-align-justify{
-    text-align: justify;
+    text-align: justify !important;
 }
 
 .ql-align-center{
-    text-align: center;
+    text-align: center !important;
 }
 
 .info-blog{

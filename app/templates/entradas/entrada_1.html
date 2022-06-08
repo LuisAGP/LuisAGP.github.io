@@ -1,6 +1,31 @@
-<meta charset="utf-8">
-<script src="/app/JS/app.js"></script>
-<div id="base" file="/app/templates/base.html" style="display: none;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kivymd Blog</title>
+
+    <!-- JavaScript -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1397700931807199" crossorigin="anonymous"></script>
+    <script src="/app/JS/app.js"></script>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/app/CSS/main.css">
+    
+</head>
+<body>
+
+    <div include-html-file="/app/templates/menu.html"></div>
+    
+    <!-- ****************************************************** CONTENIDO ****************************************************** -->
+
     <div class="wrapper post-wrapper">
 
         <div class="info-blog">
@@ -20,7 +45,14 @@
         </pre><p><br></p><p><br></p><h2><strong>Instalación de librerías Kivy y Kivymd </strong></h2><h2><br></h2><p class="ql-align-justify">En la misma consola y con nuestro entorno virtual activado, escribiremos las siguientes líneas:</p><pre class="ql-syntax" spellcheck="false">pip install kivy
 pip install pillow
 pip install kivymd==0.104.2
-        </pre><p><br></p><p><br></p><p><br></p><h2><strong>Aplicación de contador con kivy y kivymd</strong></h2><p><br></p><p class="ql-align-justify">Nuestra aplicación será muy sencilla, pero el objetivo es que veas lo fácil que es crear una app con estas herramientas. La aplicación consistirá en un contador, capaz de incrementar y decrementar su valor por medio de dos botones.</p><p class="ql-align-justify"><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_809dc7c0dd8b472ebe89f3464a2fd837~mv2.png/v1/fit/w_300,h_300,al_c,q_5,enc_auto/file.png" alt="Contador con python kivymd aplicación sencilla"></p><p><br></p><p>Puedes utilizar el editor que más te guste, en mi caso utilizare Visual Studio Code ya que incorpora una consola que nos permite ejecutar fácilmente los scripts en Python.</p><p><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_977450280cbd497caa2ceecfe0c06c8f~mv2.png/v1/fit/w_289,h_66,al_c,q_5,enc_auto/file.png" alt="Estructura de aplicación simple kivymd" height="66" width="289"></p><p><br></p><p class="ql-align-justify">Empezaremos creando una carpeta en el lugar que más te guste, puede llamarse SimpleApp y dentro crearás dos archivos, uno llamado main.py y otro simpleapp.kv.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">El archivo con extensión kv es un archivo que se encargará de leer la librería de Kivy y es donde nosotros indicaremos el contenido de nuestros componentes. Esta parte también se puede hacer solo con Python pero resulta más limpio trabajar de esta forma con un archivo aparte.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Si decides colocar otro nombre a la clase <strong>SimpleApp</strong> asegúrate de cambiar también el nombre del archivo kv ya que este archivo debe ir con el mismo nombre pero en minúsculas.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Código del archivo main.py</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-keyword">from</span> kivymd.app <span class="hljs-keyword">import</span> MDApp
+        </pre><p><br></p><p><br></p><p><br></p>
+        <!-- *************************************** ANUNCIO (Tipo Articulo) *************************************** -->
+        
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1397700931807199" data-ad-slot="5562204241"></ins>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+        
+        <!-- *************************************** ANUNCIO (Tipo Articulo) *************************************** -->
+        <h2><strong>Aplicación de contador con kivy y kivymd</strong></h2><p><br></p><p class="ql-align-justify">Nuestra aplicación será muy sencilla, pero el objetivo es que veas lo fácil que es crear una app con estas herramientas. La aplicación consistirá en un contador, capaz de incrementar y decrementar su valor por medio de dos botones.</p><p class="ql-align-justify"><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_809dc7c0dd8b472ebe89f3464a2fd837~mv2.png/v1/fit/w_300,h_300,al_c,q_5,enc_auto/file.png" alt="Contador con python kivymd aplicación sencilla"></p><p><br></p><p>Puedes utilizar el editor que más te guste, en mi caso utilizare Visual Studio Code ya que incorpora una consola que nos permite ejecutar fácilmente los scripts en Python.</p><p><br></p><p class="ql-align-center"><img src="https://static.wixstatic.com/media/bb445b_977450280cbd497caa2ceecfe0c06c8f~mv2.png/v1/fit/w_289,h_66,al_c,q_5,enc_auto/file.png" alt="Estructura de aplicación simple kivymd" height="66" width="289"></p><p><br></p><p class="ql-align-justify">Empezaremos creando una carpeta en el lugar que más te guste, puede llamarse SimpleApp y dentro crearás dos archivos, uno llamado main.py y otro simpleapp.kv.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">El archivo con extensión kv es un archivo que se encargará de leer la librería de Kivy y es donde nosotros indicaremos el contenido de nuestros componentes. Esta parte también se puede hacer solo con Python pero resulta más limpio trabajar de esta forma con un archivo aparte.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Si decides colocar otro nombre a la clase <strong>SimpleApp</strong> asegúrate de cambiar también el nombre del archivo kv ya que este archivo debe ir con el mismo nombre pero en minúsculas.</p><p class="ql-align-justify"><br></p><p class="ql-align-justify"><br></p><p class="ql-align-justify">Código del archivo main.py</p><pre class="ql-syntax" spellcheck="false"><span class="hljs-keyword">from</span> kivymd.app <span class="hljs-keyword">import</span> MDApp
     <span class="hljs-keyword">from</span> kivymd.uix.relativelayout <span class="hljs-keyword">import</span> MDRelativeLayout
 
     <span class="hljs-comment"># Clase que heredará los atributos de MDRelativeLayout</span>
@@ -77,4 +109,10 @@ pip install kivymd==0.104.2
         </pre><p><br></p><p><br></p><p>¡Felicitaciones has creado tu primer aplicación con interfaces gráficas en Python!</p><p><br></p><p class="ql-align-justify">Espero que te haya resultado útil esta información, estaré publicando más contenido sobre este tema y compartiendo código de aplicaciones un poco más complejas, de modo que pueda mostrarte la forma en que puedes trabajar con proyectos más grandes, como crear un ejecutable para Windows de tu aplicación y como crear un apk para Android.</p><p><br></p>
 
     </div>
-</div>
+
+    <!-- ****************************************************** CONTENIDO ****************************************************** -->
+
+    <div include-html-file="/app/templates/footer.html"></div>
+    
+</body>
+</html>
