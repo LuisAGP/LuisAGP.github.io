@@ -185,6 +185,8 @@ img{
     margin-bottom: 1.5rem;
     cursor: pointer;
     color: var(--secondary-color);
+    max-height: 260px;
+    overflow: hidden;
 }
 
 .blog-entrie img{
@@ -192,9 +194,18 @@ img{
     max-height: 100%;
 }
 
+@supports(object-fit: cover){
+    .blog-entrie img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
 @media only screen and (max-width : 480px) {
     .blog-entrie{
         display: block;
+        max-height: unset;
     }
 
     .blog-entrie img{
