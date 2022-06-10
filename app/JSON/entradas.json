@@ -17,6 +17,15 @@
             "etiquetas": "Diseño móvil,Aplicación de banco,lenguaje kv",
             "portada": "/app/image/e2/portada.jpg",
             "rutaArchivo": "/app/templates/entradas/entrada_2.html"
+        },
+        {
+            "titulo": "App para consultar los valores de las criptomonedas más importantes",
+            "autor": "Luis GP",
+            "descripcion": "Para la realización de esta aplicación haremos uso de una de las librerías más famosas de Python llamada Requests. Esta librería permite realizar peticiones HTTP...",
+            "fechaPublicacion": "2022-06-09T20:21:20.215Z",
+            "etiquetas": "Diseño móvil,Aplicación de banco,lenguaje kv",
+            "portada": "/app/image/e3/portada.jpg",
+            "rutaArchivo": "/app/templates/entradas/entrada_3.html"
         }
     ]
 }
