@@ -387,3 +387,28 @@ footer{
 }
 
 /* *********************************** FOOTER ************************************ */
+
+
+
+
+/* ********************************** ANUNCIO *********************************** */
+
+.Anuncio{
+    width: 100%;
+    padding: 1.1rem 0rem;
+    text-align: center;
+    color: blue;
+    color: rgb(17, 17, 17);
+    background: linear-gradient(rgb(249, 207, 111), rgb(246, 189, 66) 80%, rgb(246, 189, 65));
+    border-color: rgb(240, 194, 70) rgb(235, 188, 60) rgb(191, 154, 59);
+    border-radius: 3px;
+    margin: 1.4rem auto;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* ********************************** ANUNCIO *********************************** */
+
+
+
+
