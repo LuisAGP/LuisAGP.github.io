@@ -340,6 +340,12 @@ img{
     font-size: .8rem;
 }
 
+.post-wrapper a{
+    font-weight: bold;
+    color: rgb(46, 119, 255);
+    text-decoration: underline;
+}
+
 @media only screen and (max-width : 480px) {
     .post-wrapper{
         padding: 1rem;
